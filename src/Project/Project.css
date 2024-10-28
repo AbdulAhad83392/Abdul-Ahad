@@ -256,13 +256,7 @@ body{
     border-radius: 2rem;
     height: 10vh;
 }
-.input{
-    height: 40vh;
-    margin-top: 1rem;
-    width: 100%;
-    background-color: rgb(14, 18, 22);
-    border-radius: 2rem;
-}
+
 .i{
     display: flex;
     flex-wrap: wrap;
