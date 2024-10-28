@@ -1,313 +1,119 @@
 import React, { useEffect } from 'react';
-import AOS from 'aos'; // Import AOS
-import 'aos/dist/aos.css'; // Import AOS CSS
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import { MdOutlineMoveToInbox } from "react-icons/md";
 
-
-
 export default function Portfoilo() {
-    // Initialize AOS
     useEffect(() => {
         AOS.init({
-            duration: 1000, // Set animation duration
-            once: true, // Animation occurs only once
+            duration: 1000,
+            once: true,
         });
     }, []);
 
     return (
-        <div>
-            <div style={{ color: 'white' }} className="portbackground">
-                {/* About Me section with fade-up-right */}
-                <h1
-                    style={{ color: 'yellow', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
-                    data-aos="fade-up-right"
-                >
-                    About me
-                </h1>
+        <div className="portbackground" style={{ color: 'white' }}>
+            <h1 className="text-warning text-center" data-aos="fade-up-right">About Me</h1>
+            <h2 className="text-center" data-aos="fade-up-right">Personal Infos</h2>
 
-                {/* Personal Infos with fade-up-right */}
-                <h1
-                    style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
-                    data-aos="fade-up-right"
-                >
-                    Personal Infos
-                </h1>
-
-                <div style={{ color: 'white' }} className="aa">
-                    <div style={{ color: 'white' }} className="portabout">
-                        <div style={{ display: 'flex', gap: '5rem' }} className="p" data-aos="fade-up-right">
-                            {/* First Column */}
-                            <div className="pp">
-                                <b>
-                                    <p>First Name : Abdul</p>
-                                    <p>Age : 19</p>
-                                    <p>Freelancer : Available</p>
-                                    <p>Phone : +92 301 3618697</p>
-                                    <p>Skype : Abdul Ahad</p>
-                                </b>
-                            </div>
-
-                            {/* Second Column */}
-                            <div className="pp">
-                                <b>
-                                    <p>Last Name : Ahad</p>
-                                    <p>Nationality : Pakistan</p>
-                                    <p>Adress : Bahawalpur..</p>
-                                    <p>Email : ahad83392@gmail.com</p>
-                                    <p>Languages : Urdu, English</p>
-                                </b>
-                            </div>
-                        </div>
+            <div className="container">
+                <div className="row mb-5" data-aos="fade-up-right">
+                    <div className="col-12 col-md-6 mb-3">
+                        <b>
+                            <p>First Name: Abdul</p>
+                            <p>Age: 19</p>
+                            <p>Freelancer: Available</p>
+                            <p>Phone: +92 301 3618697</p>
+                            <p>Skype: Abdul Ahad</p>
+                        </b>
                     </div>
-
-                    {/* Experience Section with fade-up-right */}
-                    <div className="portexp">
-                        <div className="boxer">
-                            {/* Box 1 */}
-                            <div className="box" data-aos="fade-up-right">
-                                <br />
-                                <h1 style={{ color: 'yellow' }}>01+</h1>
-                                <h4>
-                                    -Year of <br />Experience
-                                </h4>
-                            </div>
-
-                            {/* Box 2 */}
-                            <div className="box" data-aos="fade-up-right">
-                                <br />
-                                <h1 style={{ color: 'yellow' }}>04</h1>
-                                <h4>
-                                    -Projects <br />Completed
-                                </h4>
-                            </div>
-
-                            {/* Box 3 */}
-                            <div className="box" data-aos="fade-up-right">
-                                <br />
-                                <h1 style={{ color: 'yellow' }}>All</h1>
-                                <h4>
-                                    -Customers <br />Happy
-                                </h4>
-                            </div>
-
-                            {/* Box 4 */}
-                            <div className="box" data-aos="fade-up-right">
-                                <br />
-                                <h1 style={{ color: 'yellow' }}>No</h1>
-                                <h4>
-                                    -Awards <br />Granted
-                                </h4>
-                            </div>
-                        </div>
+                    <div className="col-12 col-md-6 mb-3">
+                        <b>
+                            <p>Last Name: Ahad</p>
+                            <p>Nationality: Pakistan</p>
+                            <p>Address: Bahawalpur</p>
+                            <p>Email: ahad83392@gmail.com</p>
+                            <p>Languages: Urdu, English</p>
+                        </b>
                     </div>
                 </div>
 
-                <br /><br /><br />
-
-                {/* My Skills section with fade-up-right */}
-                <h1
-                    style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
-                    data-aos="fade-up-right"
-                >
-                    My Skills
-                </h1>
-
-                <br /><br />
-
-                {/* Progress Section */}
-                <div className="circle-container" data-aos="fade-up-right"
-                    style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 150px)', gap: '20px', justifyContent: 'center' }}>
-                    <div>
-                        <div className="circle" style={{
-                            position: 'relative',
-                            width: '150px',
-                            height: '150px',
-                            borderRadius: '50%',
-                            background: 'conic-gradient(#ff6f00 calc(90 * 1%), #333 calc(25 * 1%))'
-
-                        }}
-                            data-aos="fade-up-right"
-                        >
-                            <div style={{
-                                position: 'absolute',
-                                top: '10px',
-                                left: '10px',
-                                right: '10px',
-                                bottom: '10px',
-                                backgroundColor: '#1f1f1f',
-                                borderRadius: '50%',
-                                zIndex: 1,
-                            }}
-                                data-aos="fade-up-right"
-                            ></div>
-                            <div style={{
-                                position: 'absolute',
-                                top: '50%',
-                                left: '50%',
-                                transform: 'translate(-50%, -50%)',
-                                fontSize: '28px',
-                                color: 'white',
-                                zIndex: 2,
-                            }}
-                                data-aos="fade-up-right"
-                            >90%</div>
+                {/* Experience Section */}
+                <h2 className="text-center" data-aos="fade-up-right">Experience</h2>
+                <div className="row text-center mb-5">
+                    {[
+                        { title: "01+", subtitle: "Year of Experience" },
+                        { title: "04", subtitle: "Projects Completed" },
+                        { title: "All", subtitle: "Customers Happy" },
+                        { title: "No", subtitle: "Awards Granted" },
+                    ].map((box, index) => (
+                        <div className="col-12 col-md-3 mb-4" key={index} data-aos="fade-up-right">
+                            <div className="box">
+                                <h1 className="text-warning">{box.title}</h1>
+                                <h4>{box.subtitle}</h4>
+                            </div>
                         </div>
-                        <div className="label" style={{ textAlign: 'center', marginTop: '10px', color: 'white' }}>HTML</div>
-                    </div>
-
-                    <div>
-                        <div className="circle" style={{
-                            position: 'relative',
-                            width: '150px',
-                            height: '150px',
-                            borderRadius: '50%',
-                            background: 'conic-gradient(#ff6f00 calc(80 * 1%), #333 calc(89 * 1%))'
-                        }}
-                            data-aos="fade-up-right"
-                        >
-                            <div style={{
-                                position: 'absolute',
-                                top: '10px',
-                                left: '10px',
-                                right: '10px',
-                                bottom: '10px',
-                                backgroundColor: '#1f1f1f',
-                                borderRadius: '50%',
-                                zIndex: 1,
-                            }}
-                                data-aos="fade-up-right"
-                            ></div>
-                            <div style={{
-                                position: 'absolute',
-                                top: '50%',
-                                left: '50%',
-                                transform: 'translate(-50%, -50%)',
-                                fontSize: '28px',
-                                color: 'white',
-                                zIndex: 2,
-                            }}
-                                data-aos="fade-up-right"
-                            >80%</div>
-                        </div>
-                        <div className="label" style={{ textAlign: 'center', marginTop: '10px', color: 'white' }}>CSS</div>
-                    </div>
-
-                    <div>
-                        <div className="circle" style={{
-                            position: 'relative',
-                            width: '150px',
-                            height: '150px',
-                            borderRadius: '50%',
-                            background: 'conic-gradient(#ff6f00 calc(78 * 1%), #333 calc(95 * 1%))'
-                        }}
-                            data-aos="fade-up-right"
-                        >
-                            <div style={{
-                                position: 'absolute',
-                                top: '10px',
-                                left: '10px',
-                                right: '10px',
-                                bottom: '10px',
-                                backgroundColor: '#1f1f1f',
-                                borderRadius: '50%',
-                                zIndex: 1,
-                            }}
-                                data-aos="fade-up-right"
-                            ></div>
-                            <div style={{
-                                position: 'absolute',
-                                top: '50%',
-                                left: '50%',
-                                transform: 'translate(-50%, -50%)',
-                                fontSize: '28px',
-                                color: 'white',
-                                zIndex: 2,
-                            }}
-                                data-aos="fade-up-right"
-                            >78%</div>
-                        </div>
-                        <div className="label" style={{ textAlign: 'center', marginTop: '10px', color: 'white' }}>Bootstrap</div>
-                    </div>
-
-                    <div>
-                        <div className="circle" style={{
-                            position: 'relative',
-                            width: '150px',
-                            height: '150px',
-                            borderRadius: '50%',
-                            background: 'conic-gradient(#ff6f00 calc(50 * 1%), #333 calc(50 * 1%))'
-                        }}
-                            data-aos="fade-up-right"
-                        >
-                            <div style={{
-                                position: 'absolute',
-                                top: '10px',
-                                left: '10px',
-                                right: '10px',
-                                bottom: '10px',
-                                backgroundColor: '#1f1f1f',
-                                borderRadius: '50%',
-                                zIndex: 1,
-                            }}
-                                data-aos="fade-up-right"
-                            ></div>
-                            <div style={{
-                                position: 'absolute',
-                                top: '50%',
-                                left: '50%',
-                                transform: 'translate(-50%, -50%)',
-                                fontSize: '28px',
-                                color: 'white',
-                                zIndex: 2,
-                            }}
-                                data-aos="fade-up-right"
-                            >50%</div>
-                        </div>
-                        <div className="label" style={{ textAlign: 'center', marginTop: '10px', color: 'white' }}
-                            data-aos="fade-up-right"
-                        >React</div>
-                    </div>
+                    ))}
                 </div>
 
-
-                {/* now Education part */}
-                <br /><br />
-                <h1 style={{ textAlign: 'center' }}>Education And Experience</h1>
-
-                <div className="educ container">
-
-                    <div className="edu">
-                    <MdOutlineMoveToInbox className='inbox' /><h3 style={{textAlign:'center'}}>Matric</h3><h5 style={{textAlign:'center'}}>Got 97% <br />Done in 2019-20</h5>
-                    </div>
-
-                    <div className="edu">
-                    <MdOutlineMoveToInbox className='inbox' /><h3 style={{textAlign:'center'}}>Intermidiate</h3><h5 style={{textAlign:'center'}}>Got 80% <br />Done in 2021-22</h5>
-                    </div>
-
-                    <div className="edu">
-                    <MdOutlineMoveToInbox className='inbox' /><h3 style={{textAlign:'center'}}>BS IN Artificial Intelligence</h3><h5 style={{textAlign:'center'}}>Continue in semester 3rd <br />2023-27</h5>
-                    </div>
-
-                    <div className="edu">
-                    <MdOutlineMoveToInbox className='inbox' /><h3 style={{textAlign:'center'}}>Web Development</h3><h5 style={{textAlign:'center'}}>Done aproximately <br />Front end development</h5>
-                    </div>
-
-                    
-
-
-
-
-
+                {/* My Skills Section */}
+                <h2 className="text-center" data-aos="fade-up-right">My Skills</h2>
+                <div className="row mb-5">
+                    {[
+                        { skill: "HTML", percentage: "90%", color: "#ff6f00" },
+                        { skill: "CSS", percentage: "80%", color: "#ff6f00" },
+                        { skill: "Bootstrap", percentage: "78%", color: "#ff6f00" },
+                        { skill: "React", percentage: "50%", color: "#ff6f00" },
+                    ].map((skill, index) => (
+                        <div className="col-12 col-sm-6 col-md-3 text-center mb-4" key={index}>
+                            <div className="circle" style={{
+                                position: 'relative',
+                                width: '150px',
+                                height: '150px',
+                                borderRadius: '50%',
+                                background: `conic-gradient(${skill.color} calc(${skill.percentage.slice(0, -1)} * 1%), #333 calc(100 * 1%))`,
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                margin: '0 auto',
+                            }}>
+                                <div style={{
+                                    position: 'absolute',
+                                    top: '10px',
+                                    left: '10px',
+                                    right: '10px',
+                                    bottom: '10px',
+                                    backgroundColor: '#1f1f1f',
+                                    borderRadius: '50%',
+                                    zIndex: 1,
+                                }}></div>
+                                <div style={{
+                                    fontSize: '28px',
+                                    color: 'white',
+                                    zIndex: 2,
+                                }}>{skill.percentage}</div>
+                            </div>
+                            <div className="label" style={{ color: 'white' }}>{skill.skill}</div>
+                        </div>
+                    ))}
                 </div>
-                
 
-
-
-                
-
-
-
-
+                {/* Education Section */}
+                <h2 className="text-center" data-aos="fade-up-right">Education and Experience</h2>
+                <div className="row mb-5">
+                    {[
+                        { title: "Matric", description: "Got 97% (Done in 2019-20)" },
+                        { title: "Intermediate", description: "Got 80% (Done in 2021-22)" },
+                        { title: "BS in Artificial Intelligence", description: "Continue in semester 3rd (2023-27)" },
+                        { title: "Web Development", description: "Done approximately Front end development" },
+                    ].map((edu, index) => (
+                        <div className="col-12 col-md-6 mb-4 text-center" key={index}>
+                            <MdOutlineMoveToInbox className='inbox' />
+                            <h3>{edu.title}</h3>
+                            <h5>{edu.description}</h5>
+                        </div>
+                    ))}
+                </div>
             </div>
         </div>
     );
