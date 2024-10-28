@@ -6,33 +6,24 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { MdOutlineMoveToInbox } from "react-icons/md";
 
-
 function MyVerticallyCenteredModal(props) {
   return (
-    <Modal
-      {...props}
-      size="lg"
-      aria-labelledby="contained-modal-title-vcenter"
-      centered
-    >
+    <Modal {...props} size="lg" aria-labelledby="contained-modal-title-vcenter" centered>
       <Modal.Header closeButton>
-        <Modal.Title id="contained-modal-title-vcenter">
-          About Me and Portfolio
-        </Modal.Title>
+        <Modal.Title id="contained-modal-title-vcenter">About Me and Portfolio</Modal.Title>
       </Modal.Header>
-      <Modal.Body style={{ backgroundColor: '#123', color: 'white' }}> {/* Set background color here */}
-        <h1 style={{ color: 'yellow', textAlign: 'center' }}>About Me</h1>
-
-        <h2 style={{ textAlign: 'center' }}>Personal Infos</h2>
-        <div style={{ display: 'flex', justifyContent: 'space-around', color: 'white' }}>
-          <div>
+      <Modal.Body style={{ backgroundColor: '#123', color: 'white' }}>
+        <h1 className="text-center text-warning">About Me</h1>
+        <h2 className="text-center">Personal Infos</h2>
+        <div className="row text-white">
+          <div className="col-12 col-md-6 mb-3">
             <p><b>First Name:</b> Abdul</p>
             <p><b>Age:</b> 19</p>
             <p><b>Freelancer:</b> Available</p>
             <p><b>Phone:</b> +92 301 3618697</p>
             <p><b>Skype:</b> Abdul Ahad</p>
           </div>
-          <div>
+          <div className="col-12 col-md-6 mb-3">
             <p><b>Last Name:</b> Ahad</p>
             <p><b>Nationality:</b> Pakistan</p>
             <p><b>Address:</b> Bahawalpur</p>
@@ -41,93 +32,41 @@ function MyVerticallyCenteredModal(props) {
           </div>
         </div>
 
-        <h2 style={{ textAlign: 'center' }}>Experience</h2>
-        <div style={{ display: 'flex', justifyContent: 'space-around' }}>
-          <div>
-            <h3 style={{ color: 'yellow', textAlign: 'center' }}>04+</h3>
-            <p>Months of Experience</p>
-          </div>
-          <div>
-            <h3 style={{ color: 'yellow', textAlign: 'center' }}>00</h3>
-            <p>Projects Completed</p>
-          </div>
-          <div>
-            <h3 style={{ color: 'yellow', textAlign: 'center' }}>No</h3>
-            <p>Customers Happy</p>
-          </div>
-          <div>
-            <h3 style={{ color: 'yellow', textAlign: 'center' }}>No</h3>
-            <p>Awards Granted</p>
-          </div>
+        <h2 className="text-center">Experience</h2>
+        <div className="row text-center">
+          {['04+', '00', 'No', 'No'].map((exp, index) => (
+            <div className="col-6 col-md-3 mb-4" key={index}>
+              <h3 className="text-warning">{exp}</h3>
+              <p>{['Months of Experience', 'Projects Completed', 'Customers Happy', 'Awards Granted'][index]}</p>
+            </div>
+          ))}
         </div>
 
-        <h2 style={{ textAlign: 'center' }}>My Skills</h2>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 150px)', gap: '20px', justifyContent: 'center' }}>
-          <div style={{ textAlign: 'center' }}>
-            <div className="circle" style={{
-              position: 'relative',
-              width: '150px',
-              height: '150px',
-              borderRadius: '50%',
-              background: 'conic-gradient(#ff6f00 90%, #333 10%)'
-            }}></div>
-            <div style={{ marginTop: '10px', color: 'white' }}>HTML</div>
-          </div>
-          <div style={{ textAlign: 'center' }}>
-            <div className="circle" style={{
-              position: 'relative',
-              width: '150px',
-              height: '150px',
-              borderRadius: '50%',
-              background: 'conic-gradient(#ff6f00 80%, #333 20%)'
-            }}></div>
-            <div style={{ marginTop: '10px', color: 'white' }}>CSS</div>
-          </div>
-          <div style={{ textAlign: 'center' }}>
-            <div className="circle" style={{
-              position: 'relative',
-              width: '150px',
-              height: '150px',
-              borderRadius: '50%',
-              background: 'conic-gradient(#ff6f00 78%, #333 22%)'
-            }}></div>
-            <div style={{ marginTop: '10px', color: 'white' }}>Bootstrap</div>
-          </div>
-          <div style={{ textAlign: 'center' }}>
-            <div className="circle" style={{
-              position: 'relative',
-              width: '150px',
-              height: '150px',
-              borderRadius: '50%',
-              background: 'conic-gradient(#ff6f00 50%, #333 50%)'
-            }}></div>
-            
-            <div style={{ marginTop: '10px', color: 'white' }}>React</div>
-          </div>
+        <h2 className="text-center">My Skills</h2>
+        <div className="row justify-content-center">
+          {['HTML', 'CSS', 'Bootstrap', 'React'].map((skill, index) => (
+            <div className="col-6 col-md-3 text-center mb-4" key={index}>
+              <div className="circle" style={{
+                position: 'relative',
+                width: '150px',
+                height: '150px',
+                borderRadius: '50%',
+                background: `conic-gradient(#ff6f00 ${[90, 80, 78, 50][index]}%, #333 ${[10, 20, 22, 50][index]}%)`
+              }}></div>
+              <div className="mt-2 text-white">{skill}</div>
+            </div>
+          ))}
         </div>
 
-        <h2 style={{ textAlign: 'center' }}>Education and Experience</h2>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '20px', color: 'white' }}>
-          <div style={{ textAlign: 'center' }}>
-            <MdOutlineMoveToInbox />
-            <h3>Matric</h3>
-            <p>Got 97% <br /> Done in 2019-20</p>
-          </div>
-          <div style={{ textAlign: 'center' }}>
-            <MdOutlineMoveToInbox />
-            <h3>Intermidiate</h3>
-            <p>Got 80% <br /> Done in 2021-22</p>
-          </div>
-          <div style={{ textAlign: 'center' }}>
-            <MdOutlineMoveToInbox />
-            <h3>BS in Artificial Intelligence</h3>
-            <p>Continue in semester 3rd <br /> 2023-27</p>
-          </div>
-          <div style={{ textAlign: 'center' }}>
-            <MdOutlineMoveToInbox />
-            <h3>Web Development</h3>
-            <p>Done approximately <br /> Front end development</p>
-          </div>
+        <h2 className="text-center">Education and Experience</h2>
+        <div className="row text-center text-white">
+          {['Matric', 'Intermidiate', 'BS in Artificial Intelligence', 'Web Development'].map((edu, index) => (
+            <div className="col-12 col-md-6 mb-4" key={index}>
+              <MdOutlineMoveToInbox />
+              <h3>{edu}</h3>
+              <p dangerouslySetInnerHTML={{ __html: ['Got 97% <br /> Done in 2019-20', 'Got 80% <br /> Done in 2021-22', 'Continue in semester 3rd <br /> 2023-27', 'Done approximately <br /> Front end development'][index]} } />
+            </div>
+          ))}
         </div>
       </Modal.Body>
       <Modal.Footer>
@@ -138,53 +77,31 @@ function MyVerticallyCenteredModal(props) {
 }
 
 export default function Main() {
-  // Initialize AOS
   useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      once: true,
-    });
+    AOS.init({ duration: 1000, once: true });
   }, []);
 
   const [modalShow, setModalShow] = useState(false);
 
   return (
     <div>
-
-      
       <div className="main">
         <div className="a">
           <div className="b" data-aos="fade-up-right"></div>
-
           <div className="c" data-aos="fade-up-right">
-            <h1 style={{ color: 'yellow' }}>--Hi I'm Abdul Ahad <br />Your Web designer</h1>
-            <p style={{ color: 'whitesmoke' }}>
-              Hi..... <br /> Meet here u'r  Web developer check my portfolio. Read my skills and experience and study... <br />Thanks.... <br /> Regards:Abdul Ahad
+            <h1 className="text-warning">--Hi I'm Abdul Ahad <br />Your Web designer</h1>
+            <p className="text-whitesmoke">
+              Hi..... <br /> Meet here u'r Web developer, check my portfolio. Read my skills and experience and study... <br />Thanks.... <br /> Regards: Abdul Ahad
             </p>
-
-
-            
-
-
-            
-
-            <button
-              style={{ display: 'flex' }}
-              className='btn12'
-              onClick={() => setModalShow(true)}
-            >
+            <button className='btn12' onClick={() => setModalShow(true)}>
               Read More
-              <div className="btn121"><FaAngleDoubleRight  /></div>
+              <div className="btn121"><FaAngleDoubleRight /></div>
             </button>
           </div>
         </div>
       </div>
 
-
-      <MyVerticallyCenteredModal
-        show={modalShow}
-        onHide={() => setModalShow(false)}
-      />
+      <MyVerticallyCenteredModal show={modalShow} onHide={() => setModalShow(false)} />
     </div>
   );
 }
